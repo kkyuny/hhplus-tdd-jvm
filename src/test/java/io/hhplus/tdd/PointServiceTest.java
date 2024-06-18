@@ -24,9 +24,9 @@ public class PointServiceTest {
         pointHistories = new ArrayList<>();
         pointService = new PointService(userPoints, pointHistories);
     }
-    // 풀리퀘스트용
+    // 풀리퀘스트용k
     /* 테스트 케이스˚
-     1. 성공 케이스
+     1. 성k공 케이스
       1) user point 조회 -> user 있음
       2) point 충전 -> user 있음
       3) point 사용 -> user 있고, 사용 point < 기존 point
