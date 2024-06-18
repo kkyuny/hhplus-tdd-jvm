@@ -24,7 +24,7 @@ public class PointServiceTest {
         pointHistories = new ArrayList<>();
         pointService = new PointService(userPoints, pointHistories);
     }
-
+    // 풀리퀘스트용
     /* 테스트 케이스˚
      1. 성공 케이스
       1) user point 조회 -> user 있음
