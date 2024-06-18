@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class PointService {
+    //풀리퀘스트 테스트
     private final List<UserPoint> userPoints;
     private final List<PointHistory> pointHistories;
 
