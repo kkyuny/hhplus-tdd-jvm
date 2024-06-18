@@ -137,7 +137,7 @@ public class PointServiceTest {
         long userId = 6L;
         long point = 200L;
         long amount = 100L;
-//d
+
         // When
         Throwable exception = assertThrows(IllegalArgumentException.class, () -> {
             pointService.usePoints(userId, amount);
