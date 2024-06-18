@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 public class UserPointTable {
 
     private final Map<Long, UserPoint> table = new HashMap<>();
-
+    
     public UserPoint selectById(Long id) {
         throttle(200);
         return table.getOrDefault(id, UserPoint.empty(id));
