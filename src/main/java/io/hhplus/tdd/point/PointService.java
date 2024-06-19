@@ -9,7 +9,6 @@ import java.util.stream.Collectors;
 
 @Service
 public class PointService {
-    // test
     private final List<UserPoint> userPoints;
     private final List<PointHistory> pointHistories;
 

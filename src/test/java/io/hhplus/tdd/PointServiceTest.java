@@ -14,7 +14,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PointServiceTest {
-    //test
     private PointService pointService;
     private List<UserPoint> userPoints;
     private List<PointHistory> pointHistories;
