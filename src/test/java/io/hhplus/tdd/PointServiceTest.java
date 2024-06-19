@@ -14,6 +14,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PointServiceTest {
+    //test
     private PointService pointService;
     private List<UserPoint> userPoints;
     private List<PointHistory> pointHistories;
@@ -25,7 +26,7 @@ public class PointServiceTest {
         pointService = new PointService(userPoints, pointHistories);
     }
     /* 테스트 케이스˚
-     1. 성공 케이스k
+     1. 성공 케이스
       1) user point 조회 -> user 있음
       2) point 충전 -> user 있음
       3) point 사용 -> user 있고, 사용 point < 기존 point
