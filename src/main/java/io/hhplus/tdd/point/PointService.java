@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class PointService {
+    // point 조회/충전/사용 기능 구현
     private final List<UserPoint> userPoints;
     private final List<PointHistory> pointHistories;
 
