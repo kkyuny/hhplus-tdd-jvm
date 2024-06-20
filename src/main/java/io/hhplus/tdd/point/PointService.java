@@ -2,7 +2,6 @@ package io.hhplus.tdd.point;
 
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -17,11 +16,10 @@ public class PointService {
         this.pointHistories = pointHistories;
     }
 
-    public UserPoint getUserPoint(long userId) {
+    public Optional<UserPoint> getUserPoint(long userId) {
         return userPoints.stream()
                 .filter(up -> up.id() == userId)
-                .findFirst()
-                .orElse(UserPoint.empty(userId));
+                .findFirst();
     }
 
     public List<PointHistory> getPointHistories(long userId) {
@@ -31,6 +29,10 @@ public class PointService {
     }
 
     public UserPoint chargePoints(long userId, long amount) {
+        if (amount < 0) {
+            throw new IllegalArgumentException("Amount is invalid");
+        }
+
         Optional<UserPoint> optionalUserPoint = userPoints.stream()
                 .filter(up -> up.id() == userId)
                 .findFirst();
@@ -42,7 +44,7 @@ public class PointService {
             updatedUserPoint = new UserPoint(userId, newPoint, System.currentTimeMillis());
             userPoints.remove(userPoint);
         } else {
-            updatedUserPoint = new UserPoint(userId, amount, System.currentTimeMillis());
+            throw new IllegalArgumentException("User not found");
         }
 
         userPoints.add(updatedUserPoint);
@@ -60,6 +62,9 @@ public class PointService {
     }
 
     public UserPoint usePoints(long userId, long amount) {
+        if (amount < 0) {
+            throw new IllegalArgumentException("Amount is invalid");
+        }
         Optional<UserPoint> optionalUserPoint = userPoints.stream()
                 .filter(up -> up.id() == userId)
                 .findFirst();

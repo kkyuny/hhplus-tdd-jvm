@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/point")
@@ -18,7 +19,7 @@ public class PointController {
 
     // user point 조회
     @GetMapping("{id}")
-    public UserPoint point(
+    public Optional<UserPoint> point(
             @PathVariable long id
     ) {
         return pointService.getUserPoint(id);
